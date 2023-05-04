@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./public/-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title> E-Commerce</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="./public/logo.png" alt="">
+    </div>
+    <div class="form-container">
+      <form id="form" class="form" action="#">
+        <section class="-account-container">
+          <span class="title">Does your company have an  account?</span>
+          <div class="tab">
+            <span class="tab-item" onclick="toggleTabs(0)">Yes</span>
+            <span class="tab-item" onclick="toggleTabs(1)">No</span>
+          </div>
+          <div class="row">
+            <input class="fill-w" id="companyAccount" name="companyAccount" type="text"
+              placeholder=" Company Account Number*" required>
+          </div>
+          <div class="row">
+            <input class="fill-w" id="companyName" name="companyName" type="text" placeholder="Company Name*" required>
+          </div>
+          <div class="row">
+            <input class="fill-w" id="salesRepName" name="salesRepName" type="text"
+              placeholder=" Sales Representative Name*" required>
+          </div>
+          <div class="row form-group">
+            <div class="col col-1">
+              <input class="fill-w" id="city" name="city" type="text" placeholder="City*" required>
+            </div>
+            <div class="col col-2">
+              <select class="fill-w" id="state" name="state" required>
+                <option value="" disabled selected hidden class="placeholder">State*</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <input class="fill-w" id="contractorLicenseNumber" name="contractorLicenseNumber" type="text"
+              placeholder="Contractor License Number*" required>
+          </div>
+        </section>
+        <section class="-account-container">
+          <span class="title">Tell us about yourself.</span>
+          <div class="row form-group">
+            <div class="col col-1">
+              <input class="fill-w" id="firstName" name="firstName" type="text" placeholder="First Name*" required>
+            </div>
+            <div class="col col-2">
+              <input class="fill-w" id="lastName" name="lastName" type="text" placeholder="Last Name*" required>
+            </div>
+          </div>
+          <div class="row">
+            <input class="fill-w" id="email" name="email" type="email" placeholder="Email Address*" required>
+          </div>
+          <div class="row">
+            <input class="fill-w" onchange="mobileFormat()" onblur="mobileFormat()"
+              onkeypress="return isNumberKey(event)" id="mobile" name="mobile" type="text"
+              placeholder="Mobile Phone Number*" required>
+          </div>
+          <div class="row">
+            <textarea class="fill-w" id="addtionalInfo" name="addtionalInfo" type="text"
+              placeholder="Additional Information"></textarea>
+          </div>
+        </section>
+        <div class="terms">
+          <span>By clicking Submit, you agree to our Privacy Policy and Terms & Conditions.</span>
+        </div>
+        <div class="actions">
+          <input class="cancel" type="button" value="Cancel" onclick="cancel()">
+          <input class="submit" type="submit" value="Submit" onSubmit="submitForm()">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="repsonse-container">
+        <div class="logo">
+          <img src="./public/logo.png" alt="Logo">
+        </div>
+        <div class="message">
+          <h2>You're all set!</h2>
+          <span>An  team member will reach out to you shortly.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
+  <script src="./node_modules/jquery-validation/dist/additional-methods.min.js"></script>
+  <script src="/main.js"></script>
+</body>
+
+</html>
